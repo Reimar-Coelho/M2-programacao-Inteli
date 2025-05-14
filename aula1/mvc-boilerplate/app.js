@@ -3,6 +3,8 @@ const app = express();
 const path = require('path');
 const alunosRoutes = require('./routes/alunos');
 const bodyParser = require('body-parser');
+const cursosRoutes = require('./routes/cursos');
+const professoresRoutes = require('./routes/professores');
 
 require('dotenv').config();
 
@@ -18,8 +20,10 @@ app.get('/', (req, res) => {
   res.redirect('/alunos');
 });
 
-const cursosRoutes = require('./routes/cursos');
+
 app.use('/cursos', cursosRoutes);
+
+app.use('/professores', professoresRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

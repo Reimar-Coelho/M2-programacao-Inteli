@@ -1,0 +1,5 @@
+Models: Models no projeto é onde as relações entre os controllers e os comandos executados no banco de dados são configurados, como por exemplo: No model dos cursos, é configurado para quando uma função de delete for executada no controller, ele executa um comando no banco de dados de deletar um elemento da tabela curso.
+
+Controllers: Controllers no projeto faz o papel de "organizador" de rotas, onde ele pega um comando executado na rota e depois relaciona ele com o model, fazendo assim com que quando uma pessoa clica em um botão, o controller receba esse clique e transforme ele em uma função que é executada no model como forma de comando para o banco de dados.
+
+Endpoints: Endpoints no projeto é tudo que é entregue ao renderizador de código como uma api, no nosso caso, o route recebe os endpoints do banco e utiliza eles para executar as funções da rota, como no exemplo: "router.post('/delete/:id', controller.delete);" que manda o post para a rota de deletar o banco, que seria o nosso endpoint.

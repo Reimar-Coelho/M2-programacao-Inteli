@@ -14,3 +14,9 @@ BEGIN
     ADD CONSTRAINT fk_curso FOREIGN KEY (curso_id) REFERENCES curso(id) ON DELETE SET NULL;
   END IF;
 END $$;
+
+CREATE TABLE professor (
+  id SERIAL PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  email VARCHAR(150) NOT NULL
+);

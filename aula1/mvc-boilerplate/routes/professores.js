@@ -1,11 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/cursoController');
+const controller = require('../controllers/professorController');
 
+// Rota principal
+router.get('/', controller.index);
+
+// Criar novo professor
 router.post('/', controller.create);
-// Rota para enviar o formulário de edição de curso ao controller
+
+// Editar professor
 router.post('/edit/:id', controller.update);
-// Rota para enviar o pedido de exclusão ao controller
+
+// Deletar professor
 router.post('/delete/:id', controller.delete);
 
 module.exports = router;
