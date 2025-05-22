@@ -7,12 +7,6 @@ exports.index = async (req, res) => {
   res.render('alunos/index', { alunos, cursos });
 };
 
-exports.byCurso = async (req, res) => {
-  const { curso_id } = req.params;
-  const alunos = await Aluno.findByCurso(curso_id);
-  res.json(alunos);
-};
-
 exports.store = async (req, res) => {
   await Aluno.create(req.body);
   res.redirect('/alunos');
@@ -28,4 +22,10 @@ exports.destroy = async (req, res) => {
   const { id } = req.params;
   await Aluno.delete(id);
   res.redirect('/alunos');
+};
+
+exports.byCurso = async (req, res) => {
+  const { curso_id } = req.params;
+  const alunos = await Aluno.findByCurso(curso_id);
+  res.json(alunos);
 };

@@ -75,6 +75,36 @@ Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir um issue ou enviar um pull request.
 
+Perguntas aula 6
+
+1. Explique com suas palavras o papel de cada camada da arquitetura MVC usada neste projeto.
+Como o Model, o Controller e a View interagem entre si?
+
+Resposta:
+ 
+Model: Gerencia dados e lógica de negócios, mantém o estado da aplicação e interage com o banco de dados, sem conhecimento direto da View ou Controller.
+
+View: Apresenta a interface ao usuário, renderiza dados e coleta entradas, mas não contém lógica de negócios nem acessa o banco de dados diretamente.
+
+Controller: Atua como intermediário, recebe requisições do usuário através da View, processa-as interagindo com o Model quando necessário, e seleciona a View apropriada para exibir os resultados.
+
+Interação: O fluxo típico começa com o usuário interagindo com a View, que envia a ação ao Controller, que consulta/atualiza o Model, e então seleciona/atualiza a View apropriada para mostrar ao usuário.
+
+2. Como ocorre o envio e o recebimento de dados no formato JSON neste projeto?
+Cite uma rota que responde em JSON e explique seu funcionamento.
+
+Resposta:
+O envio e recebimento de dados no formato JSON ocorre através de requisições HTTP, onde o cliente envia dados em JSON no corpo da requisição e o servidor responde com dados em JSON.
+No projeto, uma rota que responde em JSON é a rota `GET /user`. Quando essa rota é acessada, o Controller correspondente consulta o Model para obter a lista de usuários do banco de dados e retorna essa lista em formato JSON como resposta. O cliente pode então processar essa resposta JSON conforme necessário.
+
+3. Qual a importância de usar HTML básico com formulários e tabelas para organizar e manipular dados no navegador?
+Por que esse tipo de estrutura ainda é útil em projetos back-end com Node.js?
+
+Resposta:
+O uso de HTML básico com formulários e tabelas é importante porque fornece uma interface simples e intuitiva para os usuários interagirem com os dados. Formulários permitem a entrada de dados, enquanto tabelas organizam e exibem informações de maneira clara.
+Esse tipo de estrutura é útil em projetos back-end com Node.js porque facilita a manipulação e visualização de dados, mesmo em aplicações que utilizam frameworks modernos. Além disso, HTML básico é leve e rápido de carregar, tornando-o ideal para protótipos e aplicações simples.
+
+
 Licença
 -------
 
